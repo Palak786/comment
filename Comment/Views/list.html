@@ -1,0 +1,29 @@
+﻿<div ng-controller="MusicListController">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="comment in comment">
+                <td>{{comment.Title}}</td>
+                <td>{{commet.Description}}</td>
+                <td>
+                    <a href="#/details/{{comment.Id}}" class="btn btn-default btn-sm">Details</a>
+                    <button class="btn btn-danger btn-sm" ng-click="delete(comment)">Delete</button>
+					<a href="#/list/{{comment.Id}}" class="btn btn-default btn-sm">View</a>
+                    <button class="btn btn-danger btn-sm" ng-click="list(comment)">View</button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <button class="btn btn-danger btn-sm" ng-click="create()">Add Now Comment</button>
+    <div ng-include="'/CommentApp/Views/edit.html'"></div>
+    
+</div>
+
